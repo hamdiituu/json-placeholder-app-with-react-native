@@ -2,6 +2,7 @@ import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {CustomTabBar} from '../components/common';
 import {
   StackInTabInMain,
   StackInTabInUsers,
@@ -17,19 +18,15 @@ const MainTabNavigator = () => {
   return (
     <Tab.Navigator
       initialRouteName="MainTab"
+      tabBar={props => <CustomTabBar {...props} />}
       tabBarOptions={{
-        inactiveTintColor: 'gray',
-        activeTintColor: 'black',
-        labelStyle: {
-          fontSize: 18,
-          fontWeight: 'bold',
-          borderRadius: 60,
-          marginBottom: 5,
-        },
         style: {
-          height: 30,
-          backgroundColor: 'white',
-          borderRadius: 60,
+          backgroundColor: 'transparent',
+          position: 'absolute',
+          left: 0,
+          right: 0,
+          bottom: 0,
+          elevation: 0,
         },
       }}>
       <Tab.Screen
