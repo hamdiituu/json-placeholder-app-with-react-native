@@ -15,10 +15,14 @@ const Tab = createBottomTabNavigator();
 const MainTabNavigator = () => {
   return (
     <Tab.Navigator
+      initialRouteName="MainTab"
       tabBarOptions={{
         inactiveTintColor: 'gray',
         labelStyle: {fontSize: 18, fontWeight: 'bold'},
-        style: {height: 30, borderTopColor: 'black'},
+        style: {
+          height: 30,
+          backgroundColor: 'white',
+        },
       }}>
       <Tab.Screen
         name="MainTab"
@@ -37,7 +41,7 @@ const MainTabNavigator = () => {
 const AppNavigator = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="MainStack">
         <Stack.Screen
           name="MainStack"
           component={MainTabNavigator}

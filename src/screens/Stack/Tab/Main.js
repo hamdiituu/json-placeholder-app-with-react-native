@@ -16,7 +16,7 @@ const Main = ({navigation}) => {
   };
 
   const goToDetail = id => {
-    navigation.navigate('PostDetailStack');
+    navigation.navigate('PostDetailStack', {postId: id});
   };
 
   return (
@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginLeft: 12,
+    marginBottom: 30,
   },
 });
 
