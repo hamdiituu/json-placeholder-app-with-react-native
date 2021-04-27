@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import {View, StyleSheet, Dimensions, Animated} from 'react-native';
-const windowHeight = Dimensions.get('window').height;
+import {View, StyleSheet, Animated} from 'react-native';
 const Loader = () => {
   const [rotateValue, setRotateValue] = useState(new Animated.Value(0));
+
   useEffect(() => {
     StartImageRotate();
   }, []);
@@ -13,7 +13,7 @@ const Loader = () => {
     Animated.loop(
       Animated.timing(rotateValue, {
         toValue: 1,
-        duration: 800,
+        duration: 2000,
         useNativeDriver: true,
       }).start(() => StartImageRotate()),
     ).start();
@@ -31,7 +31,6 @@ const Loader = () => {
           color: 'red',
           textAlign: 'center',
           fontSize: 24,
-          marginTop: windowHeight / 2 - 70,
           transform: [{rotate: RotateData}],
         }}>
         ⏳
@@ -42,7 +41,7 @@ const Loader = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    marginTop: '50%',
   },
 });
 

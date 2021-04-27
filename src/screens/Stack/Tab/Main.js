@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {ScrollView, View, Text, StyleSheet} from 'react-native';
 import {Loader} from '../../../components/common';
-import {CardList} from '../../../components/post';
+import {PostList} from '../../../components/post';
 const Main = ({navigation}) => {
   const [posts, setPosts] = useState();
 
@@ -24,7 +24,7 @@ const Main = ({navigation}) => {
       {posts ? (
         <View>
           <Text style={styles.title}>Posts</Text>
-          <CardList onPress={goToDetail} posts={posts} />
+          <PostList onPress={goToDetail} posts={posts} />
         </View>
       ) : (
         <Loader />

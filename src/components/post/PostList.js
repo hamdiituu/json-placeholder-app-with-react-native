@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
-const CardList = ({posts, onPress}) => {
+const PostList = ({posts, onPress}) => {
   //console.log(posts);
   return posts.map(post => (
     <TouchableOpacity onPress={() => onPress(post.id)} key={post.id}>
@@ -19,7 +19,6 @@ const styles = StyleSheet.create({
     borderBottomWidth: 0.2,
   },
   title: {
-    textAlign: 'center',
     marginBottom: 10,
     fontSize: 15,
     fontWeight: 'bold',
@@ -30,4 +29,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CardList;
+export default PostList;

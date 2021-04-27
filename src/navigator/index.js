@@ -6,6 +6,7 @@ import {
   StackInTabInMain,
   StackInTabInUsers,
   StackInPostDetail,
+  StackInUserDetail,
 } from '../screens';
 
 const Stack = createStackNavigator();
@@ -18,20 +19,27 @@ const MainTabNavigator = () => {
       initialRouteName="MainTab"
       tabBarOptions={{
         inactiveTintColor: 'gray',
-        labelStyle: {fontSize: 18, fontWeight: 'bold'},
+        activeTintColor: 'black',
+        labelStyle: {
+          fontSize: 18,
+          fontWeight: 'bold',
+          borderRadius: 60,
+          marginBottom: 5,
+        },
         style: {
           height: 30,
           backgroundColor: 'white',
+          borderRadius: 60,
         },
       }}>
       <Tab.Screen
         name="MainTab"
         component={StackInTabInMain}
-        options={{tabBarLabel: 'Posts', title: 'Posts'}}
+        options={{tabBarLabel: 'POSTS', title: 'Posts'}}
       />
       <Tab.Screen
         name="UsersTab"
-        options={{tabBarLabel: 'Users'}}
+        options={{tabBarLabel: 'USERS'}}
         component={StackInTabInUsers}
       />
     </Tab.Navigator>
@@ -45,12 +53,20 @@ const AppNavigator = () => {
         <Stack.Screen
           name="MainStack"
           component={MainTabNavigator}
-          options={{headerShown: false, title: 'Main'}}
+          options={{
+            headerShown: false,
+            title: 'Back',
+          }}
         />
         <Stack.Screen
           name="PostDetailStack"
           component={StackInPostDetail}
           options={{title: 'Post Detail'}}
+        />
+        <Stack.Screen
+          name="UserDetailStack"
+          component={StackInUserDetail}
+          options={{title: 'User Detail'}}
         />
       </Stack.Navigator>
     </NavigationContainer>
