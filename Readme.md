@@ -8,10 +8,9 @@
 
 `npm run ios & npm run andriod`
 
-**Application Figma File**
+_**Application Api Endpoint**_
+`https://jsonplaceholder.typicode.com`
 
-`https://www.figma.com/file/CY0H5KbDpHSfWJjCT2m9lG/DetailProduct?node-id=1%3A2&viewport=509%2C589%2C0.39683520793914795`
-
-**Application Screens**
+_**Application Screens**_
 
 ![](./output/app.png)
